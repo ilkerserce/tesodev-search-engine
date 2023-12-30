@@ -1,0 +1,22 @@
+.button {
+
+  &,
+  &:link,
+  &:visited {
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: $primary-button-bg-color;
+    height: $primary-button-height;
+    padding: $primary-button-padding;
+    border-radius: $primary-button-border-radius;
+    color: $default-color-text-white;
+    font-size: inherit;
+    transition: all .4s;
+  }
+
+
+  &:hover{
+    background-color: $primary-button-hover-color;
+  }
+}

@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
+
 import { PrimaryButtonComponentComponent } from '../../components/primary-button-component/primary-button-component.component';
 
 @Component({
-  selector: 'app-main-page',
+  selector: 'app-screen-test-page',
   standalone: true,
   imports: [PrimaryButtonComponentComponent],
-  templateUrl: './main-page.component.html',
-  styleUrl: './main-page.component.scss'
+  templateUrl: './screen-test-page.component.html',
+  styleUrl: './screen-test-page.component.scss'
 })
-export class MainPageComponent {
+export class ScreenTestPageComponent {
 
 }
