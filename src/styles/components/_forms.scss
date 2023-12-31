@@ -1,0 +1,26 @@
+.search {
+  &-form-group {
+    position: relative;
+  }
+
+  &-input {
+    padding: 0 0 0 5rem;
+    margin: 2rem;
+    width: 64rem;
+    border: $search-input-border;
+    border-radius: $search-input-border-radius;
+    height: 4.6rem;
+    font-size: $form-font-size;
+    font-family: $form-font-family;
+    font-weight: $form-font-weight;
+    line-height: $form-line-height;
+    letter-spacing: $form-letter-spacing;
+    text-align: $form-text-align;
+
+    &-icon {
+      position: absolute;
+      top: 3.5rem !important;
+      left: 3.5rem !important;
+    }
+  }
+}

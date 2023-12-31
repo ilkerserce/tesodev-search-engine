@@ -1,11 +1,49 @@
-.main-page-container {
-  position: relative;
+@import '../../../styles/abstracts/variables';
+
+.main-page {
+  &-mt {
+    margin-top: 10%;
+  }
+
+  &-container {
+    min-width: 128rem;
+    min-height: 150rem;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+
+  &-flex-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &>.heading-primary {
+      margin: 3rem;
+      width: 50%;
+    }
+  }
 }
 
-.add-new-record-container {
+.add-new-record {
   display: inline-flex;
   position: absolute;
   right: 0 !important;
   top: 0 !important;
-  margin: 5rem 3rem;
+  margin: 5rem 10rem;
+
+  &-container {
+    position: relative;
+  }
+}
+
+.branding {
+  position: relative;
+  padding: 0 4rem;
+
+  &-label {
+    position: absolute;
+    right: 1rem !important;
+    font-size: $branding-label-font-size;
+  }
 }

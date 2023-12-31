@@ -1,5 +1,26 @@
+<div class="add-new-record-container">
+  <primary-button-component class="add-new-record" buttonContent="Add New Record"></primary-button-component>
+</div>
+
 <div class="main-page-container">
-  <div class="add-new-record-container">
-    <primary-button-component buttonContent="Add New Record"></primary-button-component>
+  <div class="main-page-mt">
+    <div class="main-page-flex-col">
+      <div class="branding">
+        <img class="branding-image" src="/assets/images/branding.png" alt="" srcset="">
+        <div class="branding-label">Search app</div>
+      </div>
+    </div>
+    <div class="main-page-flex-col">
+      <div class="heading-primary">Find in records</div>
+    </div>
+    <div class="main-page-flex-col">
+      <div class="search-form-group">
+        <form [formGroup]="searchKeywordForm">
+          <input type="text" class="search-input position-relative" formControlName="searchKeyword">
+        </form>
+        <img src="/assets/icons/search-icon.png" class="search-input-icon">
+      </div>
+      <primary-button-component buttonContent="Search"></primary-button-component>
+    </div>
   </div>
 </div>
