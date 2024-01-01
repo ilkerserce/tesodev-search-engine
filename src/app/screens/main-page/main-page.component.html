@@ -13,14 +13,27 @@
     <div class="main-page-flex-col">
       <div class="heading-primary">Find in records</div>
     </div>
-    <div class="main-page-flex-col">
-      <div class="search-form-group">
-        <form [formGroup]="searchKeywordForm">
-          <input type="text" class="search-input position-relative" formControlName="searchKeyword">
-        </form>
-        <img src="/assets/icons/search-icon.png" class="search-input-icon">
+    <div class="main-page-flex-col search-container">
+      <form [formGroup]="searchKeywordForm">
+        <div class="search-form-group">
+          <img src="/assets/icons/search-icon.png" class="search-input-icon">
+          <input type="text" class="search-input" formControlName="searchKeyword">
+          <primary-button-component buttonContent="Search"></primary-button-component>
+        </div>
+      </form>
+    </div>
+    <div class="main-page-flex-col search-details-container">
+      <div class="search-details-container-column">
+        <div class="search-details-container-column-content">
+          Test
+        </div>
       </div>
-      <primary-button-component buttonContent="Search"></primary-button-component>
+      <div class="search-details-container-column">
+        Test
+      </div>
+      <div class="search-details-container-column">
+        Test
+      </div>
     </div>
   </div>
 </div>
