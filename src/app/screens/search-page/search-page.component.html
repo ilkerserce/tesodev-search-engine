@@ -1,1 +1,24 @@
+<div class="search-page-header">
+  <div class="search-page-column">
+    <div class="search-page-column-branding">
+      <img src="/assets/images/search-page-header-branding.png" alt="" srcset="">
+    </div>
+  </div>
+  <div class="search-page-column search-bar-container">
+    <div class="search-form-group-search-page">
+      <img src="/assets/icons/search-icon.png" class="search-input-icon">
+      <input type="text" class="search-input-search-page " formControlName="searchKeyword">
+      <div class="search-button-container">
+        <primary-button-component buttonContent="Search"
+          (click)="this.routerLinkService.redirectRouterLink('./search-page')">
+        </primary-button-component>
+      </div>
+    </div>
+  </div>
+  <div class="search-page-column add-new-record-container">
+    <primary-button-component class="add-new-record" buttonContent="Add New Record"
+      (click)="this.routerLinkService.redirectRouterLink('./add-link-page')">
+    </primary-button-component>
+  </div>
+</div>
 <p>search-page works!</p>

@@ -25,6 +25,18 @@
       width: 50%;
     }
   }
+
+  &-branding {
+    position: relative;
+    padding: 0 4rem;
+    width: calc((28rem / $min-width) * 100vw);
+
+    &-label {
+      position: absolute;
+      right: 1rem !important;
+      font-size: $branding-label-font-size;
+    }
+  }
 }
 
 .add-new-record {
@@ -39,17 +51,6 @@
   }
 }
 
-.branding {
-  position: relative;
-  padding: 0 4rem;
-
-  &-label {
-    position: absolute;
-    right: 1rem !important;
-    font-size: $branding-label-font-size;
-  }
-}
-
 .search {
   &-container {
     display: flex;
@@ -57,7 +58,7 @@
   }
 
   &-details-container {
-    width: 72rem;
+    width: calc((72rem / $min-width) * 100vw);
     height: 25rem;
     background: #FFFFFF;
     border: 1px solid #484848;

@@ -1,0 +1,33 @@
+@import '../../../styles/abstracts/variables';
+
+.search {
+  &-page {
+    &-header {
+      display: flex;
+      align-items: center;
+      grid-gap: $default-grid-gap;
+
+      &>* {
+        margin: 3rem;
+      }
+    }
+
+    &-column {
+      width: auto;
+      margin: $grid-margin;
+
+      &:last-child {
+        display: flex;
+        justify-content: end;
+      }
+
+      &-branding {
+        width: calc((15rem / $min-width) * 100vw);
+      }
+    }
+  }
+
+  &-bar-container {
+    flex: 1 1 auto;
+  }
+}
