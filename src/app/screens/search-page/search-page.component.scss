@@ -10,19 +10,39 @@
       &>* {
         margin: 3rem;
       }
+
+      &-column {
+        width: auto;
+        margin: $grid-margin;
+
+        &:last-child {
+          display: flex;
+          justify-content: end;
+        }
+
+        &-branding {
+          width: calc((15rem / $min-width) * 100vw);
+        }
+      }
     }
 
-    &-column {
-      width: auto;
-      margin: $grid-margin;
-
-      &:last-child {
+    &-results {
+      &-container {
         display: flex;
-        justify-content: end;
+        margin: auto;
+        background-color: bisque;
+        width: calc((92rem / $min-width) * 100vw);
+        grid-gap: $grid-margin;
       }
 
-      &-branding {
-        width: calc((15rem / $min-width) * 100vw);
+      &-listing {
+        width: calc((72rem / $min-width) * 100vw);
+        height: calc((50rem / $min-height) * 100vh);
+      }
+
+      &-order-by {
+        width: calc((18rem / $min-width) * 100vw);
+        height: calc((50rem / $min-height) * 100vh);
       }
     }
   }
