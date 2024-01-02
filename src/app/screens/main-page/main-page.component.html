@@ -1,5 +1,7 @@
 <div class="add-new-record-container">
-  <primary-button-component class="add-new-record" buttonContent="Add New Record"></primary-button-component>
+  <primary-button-component class="add-new-record" buttonContent="Add New Record"
+    (click)="this.routerLinkService.redirectRouterLink('./add-link-page')">
+  </primary-button-component>
 </div>
 
 <div class="main-page-container">
@@ -34,7 +36,9 @@
         </div>
       </form>
       <div class="search-button-container">
-        <primary-button-component buttonContent="Search"></primary-button-component>
+        <primary-button-component buttonContent="Search"
+          (click)="this.routerLinkService.redirectRouterLink('./search-page')">
+        </primary-button-component>
       </div>
     </div>
 

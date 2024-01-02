@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PrimaryButtonComponentComponent } from '../../components/primary-button-component/primary-button-component.component';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterLinkService } from '../../services/router-link-service';
 
 @Component({
   selector: 'app-main-page',
@@ -16,7 +17,8 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
 export class MainPageComponent {
   searchKeywordForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+    public routerLinkService: RouterLinkService) {
     this.searchKeywordForm = this.fb.group({
       searchKeyword: '',
     })
