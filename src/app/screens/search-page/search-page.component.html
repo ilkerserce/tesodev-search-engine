@@ -1,31 +1,65 @@
-<div class="search-page-header">
-  <div class="search-page-header-column">
-    <div class="search-page-header-column-branding">
-      <img src="/assets/images/search-page-header-branding.png" alt="" srcset="">
+<div class="search-page">
+  <div class="search-page-header">
+    <div class="search-page-header-column">
+      <div class="search-page-header-column-branding">
+        <img src="/assets/images/search-page-header-branding.png" alt="" srcset="">
+      </div>
+    </div>
+    <div class="search-page-header-column search-bar-container">
+      <div class="search-form-group-search-page">
+        <img src="/assets/icons/search-icon.png" class="search-input-icon">
+        <input type="text" class="search-input-search-page " formControlName="searchKeyword">
+        <div class="search-button-container">
+          <primary-button-component buttonContent="Search"
+            (click)="this.routerLinkService.redirectRouterLink('./search-page')">
+          </primary-button-component>
+        </div>
+      </div>
+    </div>
+    <div class="search-page-header-column add-new-record-container">
+      <primary-button-component class="add-new-record" buttonContent="Add New Record"
+        (click)="this.routerLinkService.redirectRouterLink('./add-link-page')">
+      </primary-button-component>
     </div>
   </div>
-  <div class="search-page-header-column search-bar-container">
-    <div class="search-form-group-search-page">
-      <img src="/assets/icons/search-icon.png" class="search-input-icon">
-      <input type="text" class="search-input-search-page " formControlName="searchKeyword">
-      <div class="search-button-container">
-        <primary-button-component buttonContent="Search"
-          (click)="this.routerLinkService.redirectRouterLink('./search-page')">
-        </primary-button-component>
+  <div class="search-page-results-container">
+    <div class="search-page-results-listing">
+      <div class="search-page-data-component">
+        <div class="search-page-data-component-location">
+          <div class="search-page-data-component-location-icon-container">
+            <img src="/assets/icons/location-icon.png" class="object-fit">
+          </div>
+          <div class="search-page-data-component-location-details-container">
+            <div class="search-page-data-component-location-details">
+              Location1
+            </div>
+            <div class="search-page-data-component-location-details">
+              Location1
+            </div>
+          </div>
+        </div>
+        <div class="search-page-data-component-information">
+          <div class="search-page-data-component-information-name">
+            Jane Doe
+          </div>
+          <div class="search-page-data-component-information-date">
+            01/20/2021
+          </div>
+        </div>
+      </div>
+      <div class="search-page-data-component-border-bottom"></div>
+    </div>
+    <div class="search-page-order-by">
+      <div class="select-form-group">
+        <div class="custom-select" (click)="toggleOptions()">
+          <span class="select-selected">{{ selectedOption }}</span>
+          <div class="select-items" [ngClass]="{ 'show': showOptionsFlag }">
+            <div (click)="selectOption('Name ascending')">Name ascending</div>
+            <div (click)="selectOption('Name descending')">Name descending</div>
+            <div (click)="selectOption('Year ascending')">Year ascending</div>
+            <div (click)="selectOption('Year descending')">Year descending</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="search-page-header-column add-new-record-container">
-    <primary-button-component class="add-new-record" buttonContent="Add New Record"
-      (click)="this.routerLinkService.redirectRouterLink('./add-link-page')">
-    </primary-button-component>
-  </div>
-</div>
-<div class="search-page-results-container">
-  <div class="search-page-results-listing">
-    Listing
-  </div>
-  <div class="search-page-order-by">
-    Order by
-  </div>
-</div>

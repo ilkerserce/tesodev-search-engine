@@ -1,7 +1,8 @@
 //-Viewports
 $min-width: 128rem;
 $min-height: 90rem;
-// width: width: calc((figmarem / $min-width) * 100vw);
+// width: calc((figmarem / $min-width) * 100vw);
+// height: calc((figmarem / $min-height) * 100vh);
 
 //-Default Fonts:
 $default-font-size: 1.8rem;
@@ -23,6 +24,11 @@ $form-line-height: 1.6rem;
 $form-letter-spacing: 0em;
 $form-text-align: left;
 
+$select-input-font-family: 'Roboto';
+$custom-selectbox-option-background-color: #FFF;
+$custom-selectbox-option-hover-background-color: #B3B3B3;
+$custom-selectbox-option-hover-text-color: #FFF;
+
 //--Font Colors:
 $default-color-text-black: #090A0A;
 $default-color-text-white: #FFFFFF;
@@ -40,6 +46,8 @@ $primary-button-hover-color: #4F75C2;
 //-Forms
 $search-input-border: 2px solid #204080;
 $search-input-border-radius: 8px;
+$select-input-background-color: #F3F2F2;
+$select-input-text-color: #414141;
 
 //-Grid-Gap
 $default-grid-gap: 1rem;
