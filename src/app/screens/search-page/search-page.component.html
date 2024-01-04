@@ -51,13 +51,13 @@
     </div>
     <div class="search-page-order-by">
       <div class="select-form-group">
-        <div class="custom-select" (click)="toggleOptions()">
+        <div class="select-custom" (click)="toggleOptions()">
           <span class="select-selected">{{ selectedOption }}</span>
           <div class="select-items" [ngClass]="{ 'show': showOptionsFlag }">
-            <div (click)="selectOption('Name ascending')">Name ascending</div>
-            <div (click)="selectOption('Name descending')">Name descending</div>
-            <div (click)="selectOption('Year ascending')">Year ascending</div>
-            <div (click)="selectOption('Year descending')">Year descending</div>
+            <div class="select-options" (click)="selectOption('Name ascending')">Name ascending</div>
+            <div class="select-options" (click)="selectOption('Name descending')">Name descending</div>
+            <div class="select-options" (click)="selectOption('Year ascending')">Year ascending</div>
+            <div class="select-options" (click)="selectOption('Year descending')">Year descending</div>
           </div>
         </div>
       </div>
