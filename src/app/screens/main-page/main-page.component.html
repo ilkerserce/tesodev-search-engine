@@ -20,23 +20,31 @@
         <div class="search-form-group-main-page">
           <img src="/assets/icons/search-icon.png" class="search-input-icon">
           <input type="text" class="search-input-main-page" formControlName="searchKeyword">
-          <div class="main-page-flex-col search-details-container">
-            <div class="search-details-container-column">
-              <div class="search-details-container-column-content">
-                Test
+          <div *ngIf="this.searchKeywordForm.value != ''  && this.dataService.filteredData.length > 1"
+            class="main-page-flex-col search-details-container">
+            <div *ngFor="let data of dataService.filteredData.slice(0,3)" class="search-details-container-row">
+              <div class="search-details-container-row-icon-container">
+                <img src="/assets/icons/location-icon.png" class="object-fit">
+              </div>
+              <div class="search-details-container-row-content">
+                <div class="search-details-container-row-content-name">
+                  {{data.nameSurname}}
+                </div>
+                <div class="search-details-container-row-content-adress">
+                  {{data.city}}, {{data.country}}
+                </div>
               </div>
             </div>
-            <div class="search-details-container-column">
-              Test
-            </div>
-            <div class="search-details-container-column">
-              Test
+            <div *ngIf="this.searchKeywordForm.value != ''  && this.dataService.filteredData.length > 3"
+              class="search-details-show-more" (click)="this.routerLinkService.redirectRouterLink('./search-page')">
+              Show More...
             </div>
           </div>
         </div>
       </form>
       <div class="search-button-container">
         <primary-button-component buttonContent="Search"
+          [disableCondition]="!(this.dataService.filteredData.length > 1)"
           (click)="this.routerLinkService.redirectRouterLink('./search-page')">
         </primary-button-component>
       </div>

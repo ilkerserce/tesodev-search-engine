@@ -57,30 +57,86 @@
     position: relative;
   }
 
-  &-details-container {
-    width: calc((72rem / $min-width) * 100vw);
-    height: 25rem;
-    background: #FFFFFF;
-    border: 1px solid #484848;
-    border-radius: 24px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin: auto;
-    align-items: center;
+  &-details {
+    &-show-more {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: $search-show-more-button-font-weight;
+      line-height: $search-show-more-button-line-height;
+      letter-spacing: $search-show-more-button-letter-spacing;
+      height: calc((4.5rem / $min-height) * 100vh);
 
-    &>* {
-      flex-shrink: 0;
-      width: 100%;
-      max-width: 100%;
+      &:hover {
+        color: $search-show-more-button-hover-color;
+        transition: all .5s;
+        cursor: pointer;
+      }
     }
 
-    &-column {
+    &-container {
+      width: calc((72rem / $min-width) * 100vw);
+      height: 25rem;
+      background: #FFFFFF;
+      border: 1px solid #484848;
+      border-radius: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      margin: auto;
+      align-items: center;
 
+      &>* {
+        flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
+      }
 
-      &-content {
+      &-row {
         display: flex;
-        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        &-icon {
+
+          &-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: calc((5rem / $min-width) * 100vw);
+            height: calc((5rem / $min-height) * 100vh);
+          }
+        }
+
+        &-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin: 0 1rem;
+          width: calc((66.6rem / $min-width) * 100vw);
+          height: calc((6rem / $min-height) * 100vh);
+
+          &-name {
+            display: flex;
+            align-items: center;
+            font-size: $search-details-font-size;
+            font-family: $search-details-font-family;
+            font-weight: $search-details-font-weight;
+            line-height: $search-details-line-height;
+          }
+
+          &-adress {
+            display: flex;
+            align-items: center;
+            font-size: $search-subdetails-font-size;
+            font-family: $search-subdetails-font-family;
+            font-weight: $search-subdetails-font-weight;
+            line-height: $search-subdetails-line-height;
+            color: $search-subdetails-color;
+          }
+        }
       }
     }
   }

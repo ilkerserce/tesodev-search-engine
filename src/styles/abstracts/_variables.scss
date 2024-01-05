@@ -17,6 +17,7 @@ $heading-primary-font-family: 'Inter';
 
 $branding-label-font-size: 1.4rem;
 
+//--Form Fonts
 $form-font-size: 1.6rem;
 $form-font-family: 'Inter';
 $form-font-weight: 400;
@@ -29,11 +30,29 @@ $custom-selectbox-option-background-color: #FFF;
 $custom-selectbox-option-hover-background-color: #B3B3B3;
 $custom-selectbox-option-hover-text-color: #FFF;
 
+//--Search Details Fonts
+$search-details-font-size: 1.6rem;
+$search-details-font-family: 'Inter';
+$search-details-font-weight: 400;
+$search-details-line-height: 2rem;
+
+$search-subdetails-font-size: 1.4rem;
+$search-subdetails-font-family: inherit;
+$search-subdetails-font-weight: inherit;
+$search-subdetails-line-height: 1.6rem;
+
+$search-show-more-button-font-weight: 700;
+$search-show-more-button-line-height: 2.4rem;
+$search-show-more-button-letter-spacing: 0em;
+$search-show-more-button-hover-color: #4F75C2;
+
+
 //--Font Colors:
 $default-color-text-black: #090A0A;
 $default-color-text-white: #FFFFFF;
 
 $heading-primary-color: #090A0A;
+$search-subdetails-color: #72777A;
 
 //-Button Component:
 $primary-button-height: 4.6rem;

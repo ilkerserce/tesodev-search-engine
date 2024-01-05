@@ -22,4 +22,9 @@
   &:hover {
     background-color: $primary-button-hover-color;
   }
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
 }

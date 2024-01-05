@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'primary-button-component',
@@ -10,4 +9,5 @@ import { RouterModule } from '@angular/router';
 })
 export class PrimaryButtonComponentComponent {
   @Input() buttonContent!: string;
+  @Input() disableCondition!: boolean;
 }
