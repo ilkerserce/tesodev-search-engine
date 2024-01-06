@@ -1,13 +1,14 @@
 @import '../../../styles/abstracts/variables';
 
 .main-page {
+  min-height: 100vh;
+  min-width: 128vh;
+
   &-mt {
     margin-top: 10%;
   }
 
   &-container {
-    min-width: 128rem;
-    min-height: 150rem;
     display: flex;
     flex-direction: column;
     margin: auto;
