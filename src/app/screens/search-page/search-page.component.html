@@ -56,7 +56,8 @@
         </div>
       </div>
       <div class="search-page-results-pagination">
-        <button class="search-page-pagination-button" [disabled]="this.dataService.currentPage == 1"
+        <button *ngIf="this.dataService.totalPages > 0" class="search-page-pagination-button"
+          [disabled]="this.dataService.currentPage == 1"
           (click)="goToPage(this.dataService.currentPage -1)">Previous</button>
         <ng-container *ngFor="let page of this.dataService.pageScale let i = index">
           <span *ngIf="i === 3 && (this.dataService.pageScale.length >= 6)"
@@ -67,7 +68,7 @@
             {{page}}
           </button>
         </ng-container>
-        <button class=" search-page-pagination-button"
+        <button *ngIf="this.dataService.totalPages > 0" class=" search-page-pagination-button"
           [disabled]="this.dataService.currentPage == this.dataService.dividedData.length"
           (click)="goToPage(this.dataService.currentPage + 1)">Next</button>
       </div>

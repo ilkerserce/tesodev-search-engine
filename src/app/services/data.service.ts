@@ -72,6 +72,7 @@ export class DataService {
     } else if (order === 'desc') {
       this.filteredData.sort((a, b) => (a.nameSurname && b.nameSurname) ? b.nameSurname.localeCompare(a.nameSurname) : 0);
     }
+    this.currentPage = 1;
     this.divideResultsIntoArrays();
   }
 
@@ -95,6 +96,7 @@ export class DataService {
         return 0;
       });
     }
+    this.currentPage = 1;
     this.divideResultsIntoArrays();
   }
 
