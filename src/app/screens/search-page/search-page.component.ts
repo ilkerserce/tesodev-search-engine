@@ -2,6 +2,10 @@ import { Component, ElementRef, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PrimaryButtonComponentComponent } from '../../components/primary-button-component/primary-button-component.component';
 import { RouterLinkService } from '../../services/router-link-service';
+import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../../services/data.service';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-search-page',
@@ -9,18 +13,52 @@ import { RouterLinkService } from '../../services/router-link-service';
   imports: [
     CommonModule,
     PrimaryButtonComponentComponent,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   templateUrl: './search-page.component.html',
   styleUrl: './search-page.component.scss'
 })
 
 export class SearchPageComponent {
-  constructor(public routerLinkService: RouterLinkService,
-    private renderer: Renderer2,
-    private elementRef: ElementRef) { }
-
+  searchKeywordForm: FormGroup;
+  subscription: Subscription;
   selectedOption: string = 'Order By';
   showOptionsFlag: boolean = false;
+  nameSurname!: string;
+
+  constructor(public routerLinkService: RouterLinkService,
+    private renderer: Renderer2,
+    private elementRef: ElementRef,
+    private route: ActivatedRoute,
+    public dataService: DataService,
+    private fb: FormBuilder) {
+
+    this.route.queryParams.subscribe(params => {
+      this.nameSurname = params['nameSurname'];
+      this.dataService.filterDataByKeyValuePair('nameSurname', this.nameSurname);
+    });
+
+    this.searchKeywordForm = this.fb.group({
+      searchKeyword: '',
+    })
+
+    this.subscription = this.searchKeywordForm.controls['searchKeyword'].valueChanges.subscribe((newValue) => {
+      if (newValue || newValue === '') {
+        this.dataService.filterDataByKeyValuePair('nameSurname', newValue);
+      }
+    });
+  }
+
+  ngOnInit() {
+    this.searchKeywordForm.patchValue({
+      searchKeyword: this.nameSurname,
+    })
+    console.log(this.dataService.filteredData)
+
+    this.dataService.divideResultsIntoArrays();
+    this.dataService.getPageNumbers();
+  }
 
   removeShowClass() {
     const element = this.elementRef.nativeElement.querySelector('.select-items');
@@ -36,5 +74,9 @@ export class SearchPageComponent {
   selectOption(option: string) {
     this.selectedOption = option;
     this.removeShowClass()
+  }
+
+  goToPage(pageNumber: number) {
+    this.dataService.currentPage = pageNumber;
   }
 }

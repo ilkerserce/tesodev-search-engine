@@ -10,7 +10,14 @@ export class DataService {
   private baseUrl = "assets/fakedb.json";
   allDatas: any[] = [];
   dataColumns: any[] = [];
+
   filteredData: any[] = [];
+  dividedData: any[][] = [];
+
+  currentPage = 1;
+  totalPages!: number;
+  pageScale: number[] = [];
+
 
   constructor(private httpClient: HttpClient) { }
 
@@ -41,5 +48,47 @@ export class DataService {
     } else {
       this.filteredData = [];
     }
+    console.log(this.filteredData);
+    this.divideResultsIntoArrays()
+  }
+
+  divideResultsIntoArrays() {
+    const chunkSize = 5;
+    let index = 0;
+    this.dividedData = [];
+
+    while (index < this.filteredData.length) {
+      this.dividedData.push(this.filteredData.slice(index, index + chunkSize));
+      index += chunkSize;
+    }
+
+    this.getPageNumbers();
+    console.log(this.dividedData)
+  }
+
+  getPageNumbers() {
+    this.totalPages = this.dividedData.length;
+    console.log(this.totalPages);
+    this.prepareRangeScale();
+  }
+
+  prepareRangeScale() {
+    this.pageScale = [];
+    console.log("Total Pages:" + this.totalPages)
+    const rangeLength: number = this.totalPages - 2;
+    if (this.totalPages > 6) {
+      for (let i = 1; i <= 3; i++) {
+        this.pageScale.push(i);
+      }
+      for (let i = rangeLength; i <= this.dividedData.length; i++) {
+        this.pageScale.push(i);
+      }
+      console.log("Page Scale:" + this.pageScale);
+    } else {
+      for (let i = 1; i <= this.dividedData.length; i++) {
+        this.pageScale.push(i);
+      }
+    }
+    console.log("Page Scale:" + this.pageScale);
   }
 }

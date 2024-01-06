@@ -8,7 +8,9 @@
     <div class="search-page-header-column search-bar-container">
       <div class="search-form-group-search-page">
         <img src="/assets/icons/search-icon.png" class="search-input-icon">
-        <input type="text" class="search-input-search-page " formControlName="searchKeyword">
+        <form [formGroup]="searchKeywordForm">
+          <input type="text" class="search-input-search-page " formControlName="searchKeyword">
+        </form>
         <div class="search-button-container">
           <primary-button-component buttonContent="Search"
             (click)="this.routerLinkService.redirectRouterLink('./search-page')">
@@ -24,30 +26,51 @@
   </div>
   <div class="search-page-results-container">
     <div class="search-page-results-listing">
-      <div class="search-page-data-component">
-        <div class="search-page-data-component-location">
-          <div class="search-page-data-component-location-icon-container">
-            <img src="/assets/icons/location-icon.png" class="object-fit">
-          </div>
-          <div class="search-page-data-component-location-details-container">
-            <div class="search-page-data-component-location-details">
-              Location1
+      <div *ngIf="this.searchKeywordForm.value != ''  && this.dataService.filteredData.length > 1"
+        class="search-page-details">
+        <div *ngFor="let data of dataService.dividedData[this.dataService.currentPage-1]">
+          <div class="search-details-container-row">
+            <div class="search-details-icon-container">
+              <img src="/assets/icons/location-icon.png" class="object-fit">
             </div>
-            <div class="search-page-data-component-location-details">
-              Location1
+            <div class="search-details-data-container">
+              <div class="search-details-data-content-row">
+                <div class="search-details-data-content-column-company">
+                  {{data.company}}
+                </div>
+                <div class="search-details-data-content-column-name">
+                  {{data.nameSurname}}
+                </div>
+              </div>
+              <div class="search-details-data-content-row">
+                <div class="search-details-data-content-column-adress">
+                  {{data.city}}, {{data.country}}
+                </div>
+                <div class="search-details-data-content-column-date">
+                  {{data.date}}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="search-page-data-component-information">
-          <div class="search-page-data-component-information-name">
-            Jane Doe
-          </div>
-          <div class="search-page-data-component-information-date">
-            01/20/2021
-          </div>
+          <div class="search-page-data-component-border-bottom"></div>
         </div>
       </div>
-      <div class="search-page-data-component-border-bottom"></div>
+      <div class="search-page-results-pagination">
+        <button class="search-page-pagination-button" [disabled]="this.dataService.currentPage == 1"
+          (click)="goToPage(this.dataService.currentPage -1)">Previous</button>
+        <ng-container *ngFor="let page of this.dataService.pageScale let i = index">
+          <span *ngIf="i === 3 && (this.dataService.pageScale.length >= 6)"
+            class="search-page-pagination-continuation">...</span>
+          <button class="search-page-pagination-button"
+            [ngClass]="{ 'search-page-pagination-button-active': page === this.dataService.currentPage}"
+            (click)="goToPage(page)">
+            {{page}}
+          </button>
+        </ng-container>
+        <button class=" search-page-pagination-button"
+          [disabled]="this.dataService.currentPage == this.dataService.dividedData.length"
+          (click)="goToPage(this.dataService.currentPage + 1)">Next</button>
+      </div>
     </div>
     <div class="search-page-order-by">
       <div class="select-form-group">
@@ -63,3 +86,4 @@
       </div>
     </div>
   </div>
+</div>

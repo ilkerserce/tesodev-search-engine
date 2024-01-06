@@ -36,7 +36,7 @@
               </div>
             </div>
             <div *ngIf="this.searchKeywordForm.value != ''  && this.dataService.filteredData.length > 3"
-              class="search-details-show-more" (click)="this.routerLinkService.redirectRouterLink('./search-page')">
+              class="search-details-show-more" (click)="redirectToSearchPage()">
               Show More...
             </div>
           </div>
@@ -44,8 +44,7 @@
       </form>
       <div class="search-button-container">
         <primary-button-component buttonContent="Search"
-          [disableCondition]="!(this.dataService.filteredData.length > 1)"
-          (click)="this.routerLinkService.redirectRouterLink('./search-page')">
+          [disableCondition]="!(this.dataService.filteredData.length > 1)" (click)="redirectToSearchPage()">
         </primary-button-component>
       </div>
     </div>

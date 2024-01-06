@@ -48,4 +48,9 @@ export class MainPageComponent {
       this.subscription.unsubscribe();
     }
   }
+
+  redirectToSearchPage() {
+    const searchKeyword = this.searchKeywordForm.value.searchKeyword;
+    this.routerLinkService.redirectRouterLink('./search-page', { nameSurname: searchKeyword });
+  }
 }

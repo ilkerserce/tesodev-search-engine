@@ -8,7 +8,11 @@ export class RouterLinkService {
 
   constructor(private router: Router) { }
 
-  redirectRouterLink(routerLinkUrl: string) {
-    this.router.navigate([routerLinkUrl])
+  redirectRouterLink(routerLinkUrl: string, params?: any) {
+    if (params) {
+      this.router.navigate([routerLinkUrl], { queryParams: params });
+    } else {
+      this.router.navigate([routerLinkUrl]);
+    }
   }
 }
