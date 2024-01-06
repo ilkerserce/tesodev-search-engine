@@ -125,4 +125,8 @@ export class DataService {
     }
     console.log("Page Scale:" + this.pageScale);
   }
+
+  addFormData(formData: any): void {
+    this.allDatas.push(formData);
+  }
 }

@@ -2,7 +2,7 @@
   <div class="search-page-header">
     <div class="search-page-header-column">
       <div class="search-page-header-column-branding">
-        <img src="/assets/images/search-page-header-branding.png" alt="" srcset="">
+        <img src="/assets/images/header-branding.png" alt="" srcset="">
       </div>
     </div>
     <div class="search-page-header-column search-bar-container">
@@ -12,8 +12,7 @@
           <input type="text" class="search-input-search-page " formControlName="searchKeyword">
         </form>
         <div class="search-button-container">
-          <primary-button-component buttonContent="Search"
-            (click)="this.routerLinkService.redirectRouterLink('./search-page')">
+          <primary-button-component buttonContent="Search" (click)="search()">
           </primary-button-component>
         </div>
       </div>

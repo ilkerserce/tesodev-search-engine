@@ -1,0 +1,144 @@
+@import '../../../styles/abstracts/variables';
+
+.add-record {
+  &-page {
+    background-color: #FCFCFC;
+    min-height: 100vh;
+
+    &-header {
+      display: flex;
+      align-items: center;
+      grid-gap: $default-grid-gap;
+
+      &>* {
+        margin: 3rem;
+      }
+
+      &-column {
+        width: auto;
+        margin: $grid-margin;
+
+        &:last-child {
+          display: flex;
+          justify-content: end;
+        }
+
+        &-branding {
+          width: calc((15rem / $min-width) * 100vw);
+        }
+      }
+    }
+
+    &-input {
+      &-container {
+        display: inline-flex;
+        flex-direction: column;
+        margin: 0 0 1.3rem 0;
+        grid-gap: 0.5rem;
+      }
+
+      &-label {
+        font-family: 'Roboto';
+        padding: 0 0 .5rem 1.4rem;
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 2.1rem;
+        text-align: left;
+        color: #686868;
+
+        &.is-invalid {
+          transition: .5s all;
+          color: #FF0000B2;
+        }
+      }
+
+      &-control {
+        width: calc((59rem / $min-width) * 100vw);
+        height: calc((4.4rem / $min-height) * 100vh);
+        background-color: #FFFFFF;
+        color: #484848;
+        border: 1.5px solid #484848;
+        border-radius: 10px;
+        padding: 0 0 0 1.7rem;
+
+        &.is-invalid {
+          transition: .5s all;
+          color: #FF000080;
+          border: 1.5px solid #FF0000;
+
+          &::placeholder {
+            transition: .5s all;
+            color: #FF000080;
+            ;
+          }
+        }
+
+        &:hover {
+          transition: all .5s;
+          background-color: #64646414;
+          border: 2px solid #48484899
+        }
+
+        &::placeholder {
+          color: #64646480;
+        }
+      }
+    }
+
+    &-formgroup {
+      display: flex;
+      margin: auto;
+      justify-content: center;
+    }
+  }
+
+  &-button-container {
+    display: inline-flex;
+    justify-content: end;
+  }
+}
+
+.return-list-page-icon-container {
+  display: flex;
+  align-items: center;
+  grid-gap: 2rem;
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #484848;
+
+  &:hover {
+    color: #000;
+    cursor: pointer;
+    transform: translateY(-1rem);
+    transition: all .7s ease-out;
+  }
+}
+
+.form-group-column {
+  display: flex;
+  flex-direction: column;
+  grid-gap: .5rem;
+}
+
+
+.record-success-notification {
+  display: none;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #4caf50;
+  color: #fff;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  z-index: 9999;
+
+  &.show {
+    display: block;
+    animation: fadeOut 4s ease;
+  }
+}

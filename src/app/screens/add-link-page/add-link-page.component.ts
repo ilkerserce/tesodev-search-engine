@@ -1,12 +1,59 @@
 import { Component } from '@angular/core';
+import { PrimaryButtonComponentComponent } from "../../components/primary-button-component/primary-button-component.component";
+import { RouterLinkService } from '../../services/router-link-service';
+import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { DataService } from '../../services/data.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-add-link-page',
-  standalone: true,
-  imports: [],
-  templateUrl: './add-link-page.component.html',
-  styleUrl: './add-link-page.component.scss'
+    selector: 'app-add-link-page',
+    standalone: true,
+    templateUrl: './add-link-page.component.html',
+    styleUrl: './add-link-page.component.scss',
+    imports: [
+        CommonModule,
+        PrimaryButtonComponentComponent,
+        FormsModule,
+        ReactiveFormsModule
+    ]
 })
 export class AddLinkPageComponent {
+    addFormGroup: FormGroup;
 
+    constructor(public routerLinkService: RouterLinkService,
+        public dataService: DataService,
+        private fb: FormBuilder) {
+        this.addFormGroup = this.fb.group({
+            nameSurname: ['', Validators.required],
+            country: ['', Validators.required],
+            city: ['', Validators.required],
+            email: ['', Validators.required],
+            website: ['', Validators.required],
+        })
+    }
+
+    get f() {
+        return this.addFormGroup.controls;
+    }
+
+    addNewRecord() {
+        if (this.addFormGroup.valid) {
+            this.dataService.addFormData(this.addFormGroup.value);
+            console.log(this.addFormGroup.value);
+            this.addFormGroup.reset();
+        }
+        this.showNotification();
+    }
+
+    showNotification() {
+        var notification = document.getElementById('record-success-notification');
+        notification?.classList.add('show');
+        setTimeout(function () {
+            notification?.classList.remove('show');
+        }, 6000);
+        setTimeout(() => {
+            this.routerLinkService.redirectRouterLink('./search-page');
+        }, 3000);
+
+    }
 }

@@ -22,7 +22,6 @@ import { Subscription } from 'rxjs';
 
 export class SearchPageComponent {
   searchKeywordForm: FormGroup;
-  subscription: Subscription;
   selectedOption: string = 'Order By';
   showOptionsFlag: boolean = false;
   nameSurname!: string;
@@ -42,12 +41,6 @@ export class SearchPageComponent {
     this.searchKeywordForm = this.fb.group({
       searchKeyword: '',
     })
-
-    this.subscription = this.searchKeywordForm.controls['searchKeyword'].valueChanges.subscribe((newValue) => {
-      if (newValue || newValue === '') {
-        this.dataService.filterDataByKeyValuePair('nameSurname', newValue);
-      }
-    });
   }
 
   ngOnInit() {
@@ -89,4 +82,8 @@ export class SearchPageComponent {
   goToPage(pageNumber: number) {
     this.dataService.currentPage = pageNumber;
   }
+
+  search() {
+    this.dataService.filterDataByKeyValuePair('nameSurname', this.searchKeywordForm.value['searchKeyword']);
+  };
 }

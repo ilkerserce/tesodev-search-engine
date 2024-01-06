@@ -1,1 +1,76 @@
-<p>add-link-page works!</p>
+<div class="add-record-page">
+  <div class="add-record-page-header">
+    <div class="add-record-page-header-column">
+      <div class="add-record-page-header-column-branding">
+        <img src="/assets/images/header-branding.png" alt="" srcset="">
+      </div>
+    </div>
+    <div class="add-record-page-header-column search-bar-container">
+      <div class="return-list-page-icon-container" (click)="this.routerLinkService.redirectRouterLink('./search-page')">
+        <img src="/assets/icons/arrow-icon.png" class="return-list-page-icon">
+        <span> Return to List Page</span>
+        <div class="search-button-container">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="add-record-page-formgroup">
+    <form class="form-group-column" [formGroup]="addFormGroup" (ngSubmit)="addNewRecord()">
+      <div class="add-record-page-input-container">
+        <label class="add-record-page-input-label"
+          [ngClass]="{ 'is-invalid': f['nameSurname'].touched && addFormGroup.get('nameSurname')?.invalid }">Name
+          Surname</label>
+        <input class="add-record-page-input-control" formControlName="nameSurname" type="text"
+          [ngClass]="{ 'is-invalid': f['nameSurname'].touched && addFormGroup.get('nameSurname')?.invalid }"
+          placeholder="Enter name and surname">
+        <div [ngClass]="{ 'invalid-feedback-shown': f['nameSurname'].touched && f['nameSurname'].errors?.['required'] }"
+          class="invalid-feedback">Name and surname Required.</div>
+      </div>
+      <div class="add-record-page-input-container">
+        <label class="add-record-page-input-label"
+          [ngClass]="{ 'is-invalid': f['country'].touched && addFormGroup.get('country')?.invalid }">Country</label>
+        <input class="add-record-page-input-control" formControlName="country" type="text"
+          [ngClass]="{ 'is-invalid': f['country'].touched && addFormGroup.get('country')?.invalid }"
+          placeholder="Enter a country">
+        <div [ngClass]="{ 'invalid-feedback-shown': f['country'].touched && f['country'].errors?.['required'] }"
+          class="invalid-feedback">Country required.</div>
+      </div>
+      <div class="add-record-page-input-container">
+        <label class="add-record-page-input-label"
+          [ngClass]="{ 'is-invalid': f['city'].touched && addFormGroup.get('city')?.invalid }">Name
+          Surname</label>
+        <input class="add-record-page-input-control" formControlName="city" type="text"
+          [ngClass]="{ 'is-invalid': f['city'].touched && addFormGroup.get('city')?.invalid }"
+          placeholder="Enter a city">
+        <div [ngClass]="{ 'invalid-feedback-shown': f['city'].touched && f['city'].errors?.['required'] }"
+          class="invalid-feedback">City required.</div>
+      </div>
+      <div class="add-record-page-input-container">
+        <label class="add-record-page-input-label"
+          [ngClass]="{ 'is-invalid': f['email'].touched && addFormGroup.get('email')?.invalid }">Email
+        </label>
+        <input class="add-record-page-input-control" formControlName="email" type="text"
+          [ngClass]="{ 'is-invalid': f['email'].touched && addFormGroup.get('email')?.invalid }"
+          placeholder="Enter a email">
+        <div [ngClass]="{ 'invalid-feedback-shown': f['email'].touched && f['email'].errors?.['required'] }"
+          class="invalid-feedback">Email Required.</div>
+      </div>
+      <div class="add-record-page-input-container">
+        <label class="add-record-page-input-label"
+          [ngClass]="{ 'is-invalid': f['website'].touched && addFormGroup.get('website')?.invalid }">Website</label>
+        <input class="add-record-page-input-control" formControlName="website" type="text"
+          [ngClass]="{ 'is-invalid': f['website'].touched && addFormGroup.get('website')?.invalid }"
+          placeholder="Enter a website">
+        <div [ngClass]="{ 'invalid-feedback-shown': f['website'].touched && f['website'].errors?.['required'] }"
+          class="invalid-feedback">Website required.</div>
+      </div>
+      <div class="add-record-button-container">
+        <button type="submit" [disabled]="this.addFormGroup.invalid" class="button">Giriş</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="record-success-notification" class="record-success-notification">
+  Kayıt başarıyla eklendi.
+</div>

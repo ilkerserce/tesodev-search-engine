@@ -126,3 +126,31 @@
     }
   }
 }
+
+.invalid-feedback {
+  display: block !important;
+  visibility: hidden;
+  margin: 1rem 0;
+  padding: 0 0 0 1.4rem;
+  opacity: 0;
+  transition: opacity .5s;
+
+  &-shown {
+    visibility: visible !important;
+    opacity: 1 !important;
+    animation-name: invalid-feedback-text;
+    animation-duration: .5s;
+
+    color: #FF000080 !important;
+    font-family: 'Roboto';
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 2.1rem;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}
+
+.invalid-label {
+  color: #FF000080 !important;
+}
