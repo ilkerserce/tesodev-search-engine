@@ -73,6 +73,16 @@ export class SearchPageComponent {
 
   selectOption(option: string) {
     this.selectedOption = option;
+
+    if (option === 'Name ascending') {
+      this.dataService.sortDataByName('asc');
+    } else if (option === 'Name descending') {
+      this.dataService.sortDataByName('desc');
+    } else if (option === 'Year ascending') {
+      this.dataService.sortDataByDate('asc');
+    } else if (option === 'Year descending') {
+      this.dataService.sortDataByDate('desc');
+    }
     this.removeShowClass()
   }
 

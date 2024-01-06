@@ -66,6 +66,38 @@ export class DataService {
     console.log(this.dividedData)
   }
 
+  sortDataByName(order: string): void {
+    if (order === 'asc') {
+      this.filteredData.sort((a, b) => (a.nameSurname && b.nameSurname) ? a.nameSurname.localeCompare(b.nameSurname) : 0);
+    } else if (order === 'desc') {
+      this.filteredData.sort((a, b) => (a.nameSurname && b.nameSurname) ? b.nameSurname.localeCompare(a.nameSurname) : 0);
+    }
+    this.divideResultsIntoArrays();
+  }
+
+  sortDataByDate(order: string): void {
+    if (order === 'asc') {
+      this.filteredData.sort((a, b) => {
+        if (a.date && b.date) {
+          const dateA = new Date(a.date);
+          const dateB = new Date(b.date);
+          return dateA.getTime() - dateB.getTime();
+        }
+        return 0;
+      });
+    } else if (order === 'desc') {
+      this.filteredData.sort((a, b) => {
+        if (a.date && b.date) {
+          const dateA = new Date(a.date);
+          const dateB = new Date(b.date);
+          return dateB.getTime() - dateA.getTime();
+        }
+        return 0;
+      });
+    }
+    this.divideResultsIntoArrays();
+  }
+
   getPageNumbers() {
     this.totalPages = this.dividedData.length;
     console.log(this.totalPages);
