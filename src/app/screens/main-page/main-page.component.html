@@ -20,24 +20,26 @@
         <div class="search-form-group-main-page">
           <img src="/assets/icons/search-icon.png" class="search-input-icon">
           <input type="text" class="search-input-main-page" formControlName="searchKeyword">
-          <div *ngIf="this.searchKeywordForm.value != ''  && this.dataService.filteredData.length > 1"
-            class="main-page-flex-col search-details-container">
-            <div *ngFor="let data of dataService.filteredData.slice(0,3)" class="search-details-container-row">
-              <div class="search-details-container-row-icon-container">
-                <img src="/assets/icons/location-icon.png" class="object-fit">
-              </div>
-              <div class="search-details-container-row-content">
-                <div class="search-details-container-row-content-name">
-                  {{data.nameSurname}}
+          <div class="search-details">
+            <div *ngIf="this.searchKeywordForm.value != ''  && this.dataService.filteredData.length > 1"
+              class="main-page-flex-col search-details-container">
+              <div *ngFor="let data of dataService.filteredData.slice(0,3)" class="search-details-container-row">
+                <div class="search-details-container-row-icon-container">
+                  <img src="/assets/icons/location-icon.png" class="object-fit">
                 </div>
-                <div class="search-details-container-row-content-adress">
-                  {{data.city}}, {{data.country}}
+                <div class="search-details-container-row-content">
+                  <div class="search-details-container-row-content-name">
+                    {{data.nameSurname}}
+                  </div>
+                  <div class="search-details-container-row-content-adress">
+                    {{data.city}}, {{data.country}}
+                  </div>
                 </div>
               </div>
-            </div>
-            <div *ngIf="this.searchKeywordForm.value != ''  && this.dataService.filteredData.length > 3"
-              class="search-details-show-more" (click)="redirectToSearchPage()">
-              Show More...
+              <div *ngIf="this.searchKeywordForm.value != ''  && this.dataService.filteredData.length > 3"
+                class="search-details-show-more" (click)="redirectToSearchPage()">
+                Show More...
+              </div>
             </div>
           </div>
         </div>
@@ -50,4 +52,55 @@
     </div>
 
   </div>
+
+  <div class="main-page-top-news">
+    <h2 class="main-page-top-news-heading">Top News</h2>
+    <div class="carousel">
+      <span class="left-button" (click)="scrollCarousel('left')">
+        <img src="/assets/icons/left-actionable.png">
+      </span>
+      <div class="carousel-container" #carouselContainer>
+        <div *ngFor="let item of [0, 1, 2, 3, 4, 5, 6]; let i = index" class="carousel-image-container">
+          <img src="/assets/images/carousel-image.png">
+        </div>
+      </div>
+      <span class="right-button" (click)="scrollCarousel('right')">
+        <img src="/assets/icons/left-actionable.png">
+      </span>
+    </div>
+  </div>
+
+  <footer class="main-page-footer">
+    <div class="main-footer-column">
+      <div class="main-footer-column-image">
+        <img src="/assets/images/footer-image.png">
+      </div>
+    </div>
+    <div class="main-footer-column">
+      <div class="main-page-footer-column-contact">
+        <div class="main-page-footer-column-contact-adress">
+          <h3 class="main-page-footer-column-contact-adress-heading">İletişim</h3>
+          <p class="main-page-footer-column-contact-adress-paragraph"> Adres: Çifte Havuzlar Mah. Eski Londra Asfaltı
+            Cad.
+            Kuluçka
+            Merkezi D2 Blok No: 151/1F İç Kapı No: 2B03
+            Esenler/İstanbul</p>
+        </div>
+        <div class="main-page-footer-column-contact-email">
+          <span class="main-page-footer-column-contact-email-content">
+            Email: bilgi&#64;tesodev.com
+          </span>
+        </div>
+
+      </div>
+    </div>
+    <div class="main-footer-column">
+      <div class="main-footer-column-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.2795624019755!2d28.888373176529253!3d41.01913931875529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cabb7abf29ba35%3A0xc98f44e9057adcde!2zVGVzb2RldiBZYXrEsWzEsW0!5e0!3m2!1str!2str!4v1704601325479!5m2!1str!2str"
+          width="467" height="222" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </footer>
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PrimaryButtonComponentComponent } from '../../components/primary-button-component/primary-button-component.component';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -20,8 +20,12 @@ import { Subscription } from 'rxjs';
 })
 
 export class MainPageComponent {
+  @ViewChild('carouselContainer') carouselContainer!: ElementRef;
+
   private subscription: Subscription;
   searchKeywordForm: FormGroup;
+  scrollPosition = 0;
+  itemWidth = 328;
 
   constructor(private fb: FormBuilder,
     public routerLinkService: RouterLinkService,
@@ -52,5 +56,23 @@ export class MainPageComponent {
   redirectToSearchPage() {
     const searchKeyword = this.searchKeywordForm.value.searchKeyword;
     this.routerLinkService.redirectRouterLink('./search-page', { nameSurname: searchKeyword });
+  }
+
+  scrollCarousel(direction: string): void {
+    const container: HTMLElement = this.carouselContainer.nativeElement;
+    const containerScrollPosition = container.scrollLeft;
+    const itemWidth = 328; // Her bir carousel öğesinin genişliği (örneğin)
+
+    if (direction === 'left') {
+      container.scrollTo({
+        left: containerScrollPosition - itemWidth,
+        behavior: 'smooth' // Daha yumuşak kaydırma için
+      });
+    } else if (direction === 'right') {
+      container.scrollTo({
+        left: containerScrollPosition + itemWidth,
+        behavior: 'smooth'
+      });
+    }
   }
 }

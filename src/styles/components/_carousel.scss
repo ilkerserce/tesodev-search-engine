@@ -1,0 +1,32 @@
+.carousel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5rem;
+
+  &-container {
+    display: flex;
+    overflow-x: hidden;
+    grid-gap: 1.2rem;
+
+  }
+
+  &-image-container {}
+}
+
+.left-button {
+  display: flex;
+  margin: 0 2rem;
+  width: 4.8rem;
+  height: 4.8rem;
+  z-index: 9999;
+}
+
+.right-button {
+  display: flex;
+  margin: 0 2rem;
+  width: 4.8rem;
+  height: 4.8rem;
+  transform: rotateY(180deg);
+  z-index: 9999;
+}

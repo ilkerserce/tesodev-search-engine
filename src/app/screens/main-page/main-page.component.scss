@@ -2,7 +2,7 @@
 
 .main-page {
   min-height: 100vh;
-  min-width: 128vh;
+  width: 100vw;
 
   &-mt {
     margin-top: 10%;
@@ -38,6 +38,87 @@
       font-size: $branding-label-font-size;
     }
   }
+
+  &-top-news {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 6rem 0;
+
+    &-heading {
+      margin: 0 0 5rem 5rem;
+      padding: 0 5rem;
+      font-family: 'Inter';
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 3.6rem;
+      letter-spacing: 0em;
+    }
+  }
+
+  &-footer {
+    width: 100%;
+    height: calc((27.8rem / $min-height) * 100vh);
+    background-color: #294E98B8;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    grid: 2rem;
+
+    &-column {
+      &-image {
+        &>img {
+          width: calc((22rem / $min-width) * 100vw);
+          height: calc((18rem / $min-height) * 100vh);
+          object-fit: contain;
+        }
+      }
+
+      &-contact {
+        width: calc((42rem / $min-width) * 100vw);
+        height: calc((18rem / $min-height) * 100vh);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        &-adress {
+          &-heading {
+            color: #FFF;
+            font-family: Roboto;
+            font-size: 1.8rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+          }
+
+          &-paragraph {
+            color: #FFF;
+            font-family: Roboto;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
+        }
+
+        &-email {
+          color: #FFF;
+          font-family: Roboto;
+          font-size: 1.8rem;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+      }
+
+      &-map {
+        width: calc((46rem / $min-width) * 100vw);
+        height: calc((22rem / $min-height) * 100vh);
+        width: 467.489px;
+        height: 222.489px;
+        flex-shrink: 0;
+      }
+    }
+  }
 }
 
 .add-new-record {
@@ -59,6 +140,9 @@
   }
 
   &-details {
+    width: calc((72rem / $min-width) * 100vw);
+    height: 25rem;
+
     &-show-more {
       display: flex;
       justify-content: center;
@@ -78,8 +162,6 @@
     }
 
     &-container {
-      width: calc((72rem / $min-width) * 100vw);
-      height: 25rem;
       background: #FFFFFF;
       border: 1px solid #484848;
       border-radius: 24px;
