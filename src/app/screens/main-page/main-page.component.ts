@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
 import { RouterLinkService } from '../../services/router-link-service';
 import { DataService } from '../../services/data.service';
 import { Subscription } from 'rxjs';
+import { UlvisService } from '../../services/ulvis.service';
 
 @Component({
   selector: 'app-main-page',
@@ -29,7 +30,8 @@ export class MainPageComponent {
 
   constructor(private fb: FormBuilder,
     public routerLinkService: RouterLinkService,
-    public dataService: DataService) {
+    public dataService: DataService,
+    private ulvisService: UlvisService) {
     this.searchKeywordForm = this.fb.group({
       searchKeyword: '',
     })
@@ -45,6 +47,7 @@ export class MainPageComponent {
     this.searchKeywordForm.patchValue({
       searchKeyword: ''
     });
+    this.ulvisService.ulvisMinifyUrl();
   }
 
   ngOnDestroy() {
