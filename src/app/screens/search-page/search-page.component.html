@@ -1,7 +1,8 @@
 <div class="search-page">
   <div class="search-page-header">
     <div class="search-page-header-column">
-      <div class="search-page-header-column-branding">
+      <div class="search-page-header-column-branding branding-link"
+        (click)="this.routerLinkService.redirectRouterLink('/')">
         <img src="/assets/images/header-branding.png" alt="" srcset="">
       </div>
     </div>
@@ -27,7 +28,8 @@
     <div class="search-page-results-listing">
       <div *ngIf="this.searchKeywordForm.value != ''  && this.dataService.filteredData.length > 1"
         class="search-page-details">
-        <div *ngFor="let data of dataService.dividedData[this.dataService.currentPage-1]">
+        <div class="search-page-details-flexbox"
+          *ngFor="let data of dataService.dividedData[this.dataService.currentPage-1]; let last = last">
           <div class="search-details-container-row">
             <div class="search-details-icon-container">
               <img src="/assets/icons/location-icon.png" class="object-fit">
@@ -51,7 +53,9 @@
               </div>
             </div>
           </div>
-          <div class="search-page-data-component-border-bottom"></div>
+          <div class="search-page-data-component-border-bottom-container">
+            <div class="search-page-data-component-border-bottom" *ngIf="!last"></div>
+          </div>
         </div>
       </div>
       <div class="search-page-results-pagination">

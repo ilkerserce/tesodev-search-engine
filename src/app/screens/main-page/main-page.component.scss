@@ -181,6 +181,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 0 2.4rem;
+
 
         &-icon {
 
@@ -218,6 +220,16 @@
             font-weight: $search-subdetails-font-weight;
             line-height: $search-subdetails-line-height;
             color: $search-subdetails-color;
+          }
+
+          &-border {
+            display: flex;
+            margin: auto;
+            width: calc((57.5rem / $min-width) * 100vw);
+            height: 1px;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #F2F4F5;
           }
         }
       }

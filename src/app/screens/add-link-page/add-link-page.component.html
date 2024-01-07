@@ -2,7 +2,8 @@
   <div class="add-record-page-header">
     <div class="add-record-page-header-column">
       <div class="add-record-page-header-column-branding">
-        <img src="/assets/images/header-branding.png" alt="" srcset="">
+        <img class="branding-link" src="/assets/images/header-branding.png"
+          (click)="this.routerLinkService.redirectRouterLink('/')">
       </div>
     </div>
     <div class="add-record-page-header-column search-bar-container">

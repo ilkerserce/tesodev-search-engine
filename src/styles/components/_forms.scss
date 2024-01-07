@@ -74,13 +74,17 @@
     align-items: center;
     padding: 1rem 0rem 1rem 4rem;
     height: calc((3rem / $min-height) * 100vh);
-    width: calc(100% - 2rem);
+    width: calc((12.5rem / $min-width) * 100vw);
     background-color: #f2f2f2;
-    color: #333;
-    font-family: Arial;
     cursor: pointer;
     border-radius: 8px;
     position: relative;
+    color: #484848;
+    font-family: 'Roboto';
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 
     &:after {
       content: url('/assets/icons/descending-icon.png');
@@ -105,23 +109,38 @@
     z-index: 1;
 
     &.show {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
       position: absolute;
       margin: 2rem 0 0 0;
-      width: calc((13rem / $min-width) * 100vw);
+      width: calc((15.5rem / $min-width) * 100vw);
+      height: calc((13.5rem / $min-width) * 100vw);
       background-color: $custom-selectbox-option-background-color;
       box-shadow: 4px 6px 12px 4px #00000033;
     }
   }
 
   &-options {
-    margin: 1rem;
-    padding: 1rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
     cursor: pointer;
+    width: calc((13.5rem / $min-width) * 100vw);
+    height: calc((2.3rem / $min-width) * 100vw);
+    color: #000;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 
     &:hover {
-      background-color: $custom-selectbox-option-hover-background-color;
-      color: $custom-selectbox-option-hover-text-color;
+      color: #FFF;
+      border-radius: 8px;
+      background: #B3B3B3;
       border-radius: 8px;
     }
   }

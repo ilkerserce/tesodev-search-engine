@@ -23,18 +23,23 @@
           <div class="search-details">
             <div *ngIf="this.searchKeywordForm.value != ''  && this.dataService.filteredData.length > 1"
               class="main-page-flex-col search-details-container">
-              <div *ngFor="let data of dataService.filteredData.slice(0,3)" class="search-details-container-row">
-                <div class="search-details-container-row-icon-container">
-                  <img src="/assets/icons/location-icon.png" class="object-fit">
-                </div>
-                <div class="search-details-container-row-content">
-                  <div class="search-details-container-row-content-name">
-                    {{data.nameSurname}}
+              <div *ngFor="let data of dataService.filteredData.slice(0,3); let last=last">
+                <div class="search-details-container-row">
+                  <div class="search-details-container-row-icon-container">
+                    <img src="/assets/icons/location-icon.png" class="object-fit">
                   </div>
-                  <div class="search-details-container-row-content-adress">
-                    {{data.city}}, {{data.country}}
+                  <div class="search-details-container-row-content">
+                    <div class="search-details-container-row-content-name">
+                      {{data.nameSurname}}
+                    </div>
+                    <div class="search-details-container-row-content-adress">
+                      {{data.city}}, {{data.country}}
+                    </div>
                   </div>
                 </div>
+                <div *ngIf="!last" class="search-details-container-row search-details-container-row-content-border">
+                </div>
+
               </div>
               <div *ngIf="this.searchKeywordForm.value != ''  && this.dataService.filteredData.length > 3"
                 class="search-details-show-more" (click)="redirectToSearchPage()">
@@ -50,9 +55,7 @@
         </primary-button-component>
       </div>
     </div>
-
   </div>
-
   <div class="main-page-top-news">
     <h2 class="main-page-top-news-heading">Top News</h2>
     <div class="carousel">
@@ -69,7 +72,6 @@
       </span>
     </div>
   </div>
-
   <footer class="main-page-footer">
     <div class="main-footer-column">
       <div class="main-footer-column-image">
