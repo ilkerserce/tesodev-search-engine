@@ -39,7 +39,6 @@ export class AddLinkPageComponent {
     addNewRecord() {
         if (this.addFormGroup.valid) {
             this.dataService.addFormData(this.addFormGroup.value);
-            console.log(this.addFormGroup.value);
             this.addFormGroup.reset();
         }
         this.showNotification();

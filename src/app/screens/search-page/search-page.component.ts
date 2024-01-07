@@ -47,8 +47,6 @@ export class SearchPageComponent {
     this.searchKeywordForm.patchValue({
       searchKeyword: this.nameSurname,
     })
-    console.log(this.dataService.filteredData)
-
     this.dataService.divideResultsIntoArrays();
     this.dataService.getPageNumbers();
   }

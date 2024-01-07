@@ -35,8 +35,6 @@ export class DataService {
       });
       return transformedObject;
     });
-
-    console.log(this.allDatas);
   }
 
   filterDataByKeyValuePair(key: string, value: string): void {
@@ -48,7 +46,6 @@ export class DataService {
     } else {
       this.filteredData = [];
     }
-    console.log(this.filteredData);
     this.divideResultsIntoArrays()
   }
 
@@ -63,7 +60,6 @@ export class DataService {
     }
 
     this.getPageNumbers();
-    console.log(this.dividedData)
   }
 
   sortDataByName(order: string): void {
@@ -102,13 +98,11 @@ export class DataService {
 
   getPageNumbers() {
     this.totalPages = this.dividedData.length;
-    console.log(this.totalPages);
     this.prepareRangeScale();
   }
 
   prepareRangeScale() {
     this.pageScale = [];
-    console.log("Total Pages:" + this.totalPages)
     const rangeLength: number = this.totalPages - 2;
     if (this.totalPages > 6) {
       for (let i = 1; i <= 3; i++) {
@@ -117,13 +111,11 @@ export class DataService {
       for (let i = rangeLength; i <= this.dividedData.length; i++) {
         this.pageScale.push(i);
       }
-      console.log("Page Scale:" + this.pageScale);
     } else {
       for (let i = 1; i <= this.dividedData.length; i++) {
         this.pageScale.push(i);
       }
     }
-    console.log("Page Scale:" + this.pageScale);
   }
 
   addFormData(formData: any): void {
