@@ -37,8 +37,7 @@
       </div>
       <div class="add-record-page-input-container">
         <label class="add-record-page-input-label"
-          [ngClass]="{ 'is-invalid': f['city'].touched && addFormGroup.get('city')?.invalid }">Name
-          Surname</label>
+          [ngClass]="{ 'is-invalid': f['city'].touched && addFormGroup.get('city')?.invalid }">City</label>
         <input class="add-record-page-input-control" formControlName="city" type="text"
           [ngClass]="{ 'is-invalid': f['city'].touched && addFormGroup.get('city')?.invalid }"
           placeholder="Enter a city">
@@ -72,5 +71,5 @@
 </div>
 
 <div id="record-success-notification" class="record-success-notification">
-  Kayıt başarıyla eklendi.
+  The record has been added successfully.
 </div>
