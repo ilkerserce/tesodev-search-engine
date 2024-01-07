@@ -35,7 +35,7 @@
     &-label {
       position: absolute;
       right: 1rem !important;
-      font-size: $branding-label-font-size;
+      font-size: $thirdy-subdetails-font-size;
     }
   }
 
@@ -47,11 +47,11 @@
     &-heading {
       margin: 0 0 5rem 5rem;
       padding: 0 5rem;
-      font-family: 'Inter';
+      font-family: $secondary-font;
       font-size: 3.2rem;
-      font-weight: 700;
+      font-weight: $heavy-font-weight;
       line-height: 3.6rem;
-      letter-spacing: 0em;
+      letter-spacing: $default-letter-spacing;
     }
   }
 
@@ -82,30 +82,30 @@
 
         &-adress {
           &-heading {
-            color: #FFF;
-            font-family: Roboto;
-            font-size: 1.8rem;
+            color: $color-white;
+            font-family: $primary-font;
+            font-size: $default-font-size;
             font-style: normal;
-            font-weight: 700;
+            font-weight: $heavy-font-weight;
             line-height: normal;
           }
 
           &-paragraph {
-            color: #FFF;
-            font-family: Roboto;
+            color: $color-white;
+            font-family: $primary-font;
             font-size: 18px;
             font-style: normal;
-            font-weight: 400;
+            font-weight: $light-font-weight;
             line-height: normal;
           }
         }
 
         &-email {
-          color: #FFF;
-          font-family: Roboto;
-          font-size: 1.8rem;
+          color: $color-white;
+          font-family: $primary-font;
+          font-size: $default-font-size;
           font-style: normal;
-          font-weight: 700;
+          font-weight: $heavy-font-weight;
           line-height: normal;
         }
       }
@@ -149,14 +149,14 @@
       align-items: center;
       font-family: inherit;
       font-size: inherit;
-      font-weight: $search-show-more-button-font-weight;
-      line-height: $search-show-more-button-line-height;
-      letter-spacing: $search-show-more-button-letter-spacing;
+      font-weight: $heavy-font-weight;
+      line-height: $high-line-height;
+      letter-spacing: $default-letter-spacing;
       height: calc((4.5rem / $min-height) * 100vh);
 
       &:hover {
-        color: $search-show-more-button-hover-color;
-        transition: all .5s;
+        color: $primary-button-hover-color;
+        transition: $default-transition;
         cursor: pointer;
       }
     }
@@ -164,7 +164,7 @@
     &-container {
       background: #FFFFFF;
       border: 1px solid #484848;
-      border-radius: 24px;
+      border-radius: 2.4rem;
       display: flex;
       flex-wrap: wrap;
       flex-direction: row;
@@ -206,20 +206,20 @@
           &-name {
             display: flex;
             align-items: center;
-            font-size: $search-details-font-size;
-            font-family: $search-details-font-family;
-            font-weight: $search-details-font-weight;
-            line-height: $search-details-line-height;
+            font-size: $secondary-font-size;
+            font-family: $secondary-font;
+            font-weight: $light-font-weight;
+            line-height: $high-line-height;
           }
 
           &-adress {
             display: flex;
             align-items: center;
-            font-size: $search-subdetails-font-size;
-            font-family: $search-subdetails-font-family;
-            font-weight: $search-subdetails-font-weight;
-            line-height: $search-subdetails-line-height;
-            color: $search-subdetails-color;
+            font-size: $thirdy-subdetails-font-size;
+            font-family: $inherit;
+            font-weight: $inherit;
+            line-height: $low-line-height;
+            color: $color-gray;
           }
 
           &-border {

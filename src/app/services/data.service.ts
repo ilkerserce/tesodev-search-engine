@@ -128,5 +128,6 @@ export class DataService {
 
   addFormData(formData: any): void {
     this.allDatas.push(formData);
+    localStorage.setItem('formData', JSON.stringify(formData));
   }
 }

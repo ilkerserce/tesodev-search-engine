@@ -38,16 +38,16 @@
       }
 
       &-label {
-        font-family: 'Roboto';
+        font-family: $primary-font;
         padding: 0 0 .5rem 1.4rem;
-        font-size: 1.8rem;
-        font-weight: 700;
-        line-height: 2.1rem;
-        text-align: left;
+        font-size: $default-font-size;
+        font-weight: $heavy-font-weight;
+        line-height: $high-line-height;
+        text-align: $default-text-align;
         color: #686868;
 
         &.is-invalid {
-          transition: .5s all;
+          transition: $default-transition;
           color: #FF0000B2;
         }
       }
@@ -62,19 +62,19 @@
         padding: 0 0 0 1.7rem;
 
         &.is-invalid {
-          transition: .5s all;
+          transition: $default-transition;
           color: #FF000080;
           border: 1.5px solid #FF0000;
 
           &::placeholder {
-            transition: .5s all;
+            transition: $default-transition;
             color: #FF000080;
             ;
           }
         }
 
         &:hover {
-          transition: all .5s;
+          transition: $default-transition;
           background-color: #64646414;
           border: 2px solid #48484899
         }
@@ -106,16 +106,16 @@
   display: flex;
   align-items: center;
   grid-gap: 2rem;
-  font-family: Roboto;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 28px;
-  letter-spacing: 0em;
-  text-align: left;
+  font-family: $primary-font;
+  font-size: 2.4rem;
+  font-weight: $heavy-font-weight;
+  line-height: 2.8rem;
+  letter-spacing: $default-letter-spacing;
+  text-align: $default-text-align;
   color: #484848;
 
   &:hover {
-    color: #000;
+    color: $color-black;
     cursor: pointer;
     transform: translateY(-1rem);
     transition: all .7s ease-out;
@@ -136,8 +136,8 @@
   bottom: 2rem;
   right: 2rem;
   background-color: #4caf50;
-  color: #fff;
-  color: #fff;
+  color: $color-white;
+  color: $color-white;
   padding: 1rem 2rem;
   border-radius: 5px;
   z-index: 9999;

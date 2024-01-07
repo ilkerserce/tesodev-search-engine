@@ -58,7 +58,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #FFF;
+      background-color: $color-white;
       height: calc((4rem / $min-height) * 100vh);
       padding: calc((2rem / $min-height) * 100vh) 0;
       margin: 0 calc((2.4rem / $min-width) * 100vw);
@@ -128,27 +128,27 @@
         height: calc((2.4rem / $min-height) * 100vh);
         border: 1px solid #484848;
         border-radius: 4px;
-        background-color: #fff;
+        background-color: $color-white;
         padding: .8rem;
         margin: .5rem;
 
         &:hover {
-          color: #fff;
-          background-color: #4F75C2;
-          transition: all .5s;
+          color: $color-white;
+          background-color: $primary-button-hover-color;
+          transition: $default-transition;
         }
 
         &-active {
-          color: #fff;
-          background-color: #204080;
+          color: $color-white;
+          background-color: $primary-button-bg-color;
         }
 
         &[disabled] {
-          transition: all .5s;
+          transition: $default-transition;
           cursor: not-allowed;
           opacity: 0.5;
-          background-color: #fff;
-          color: #000;
+          background-color: $color-white;
+          color: $color-black;
         }
       }
 
@@ -156,12 +156,12 @@
         display: inline-flex;
         align-content: center;
         margin: 0 1rem;
-        font-family: 'Roboto';
+        font-family: $primary-font;
         font-size: 2.4rem;
-        font-weight: 700;
+        font-weight: $heavy-font-weight;
         line-height: 2.8rem;
-        letter-spacing: 0em;
-        text-align: left;
+        letter-spacing: $default-letter-spacing;
+        text-align: $default-text-align;
 
       }
     }
@@ -178,14 +178,14 @@
       align-items: center;
       font-family: inherit;
       font-size: inherit;
-      font-weight: $search-show-more-button-font-weight;
-      line-height: $search-show-more-button-line-height;
-      letter-spacing: $search-show-more-button-letter-spacing;
+      font-weight: $heavy-font-weight;
+      line-height: $high-line-height;
+      letter-spacing: $default-letter-spacing;
       height: calc((4.5rem / $min-height) * 100vh);
 
       &:hover {
-        color: $search-show-more-button-hover-color;
-        transition: all .5s;
+        color: $primary-button-hover-color;
+        transition: $default-transition;
         cursor: pointer;
       }
     }
@@ -195,7 +195,7 @@
       height: 25rem;
       background: #FFFFFF;
       border: 1px solid #484848;
-      border-radius: 24px;
+      border-radius: 2.4rem;
       display: flex;
       flex-wrap: wrap;
       flex-direction: row;
@@ -211,12 +211,12 @@
       &-row {
         display: flex;
         align-items: center;
-        background-color: #fff;
+        background-color: $color-white;
         justify-content: space-between;
 
         &:hover {
           background-color: #4F75C236;
-          transition: all .5s;
+          transition: $default-transition;
         }
       }
     }
@@ -254,44 +254,44 @@
           &-company {
             display: flex;
             align-items: center;
-            font-family: 'Inter';
-            font-size: 1.6rem;
-            font-weight: 400;
-            line-height: 2rem;
-            letter-spacing: 0em;
-            color: #090A0A;
+            font-family: $secondary-font;
+            font-weight: $secondary-font-size;
+            font-weight: $light-font-weight;
+            line-height: $high-line-height;
+            letter-spacing: $default-letter-spacing;
+            color: $color-black;
           }
 
           &-name {
             display: flex;
             align-items: center;
-            font-family: 'Inter';
+            font-family: $secondary-font;
             font-style: normal;
-            font-weight: 400;
-            font-size: 1.6rem;
-            line-height: 2rem;
+            font-weight: $light-font-weight;
+            font-weight: $secondary-font-size;
+            line-height: $high-line-height;
             color: #484848;
           }
 
           &-adress {
             display: flex;
             align-items: center;
-            font-family: 'Inter';
-            font-size: 1.4rem;
-            font-weight: 400;
-            line-height: 1.6rem;
-            letter-spacing: 0em;
-            color: #72777A
+            font-family: $secondary-font;
+            color: $thirdy-subdetails-font-size;
+            font-weight: $light-font-weight;
+            line-height: $low-line-height;
+            letter-spacing: $default-letter-spacing;
+            color: $color-gray;
           }
 
           &-date {
             display: flex;
             align-items: center;
-            font-family: 'Inter';
-            font-size: 1.6rem;
+            font-family: $secondary-font;
+            font-weight: $secondary-font-size;
             font-weight: 500;
-            line-height: 1.6rem;
-            letter-spacing: 0em;
+            line-height: $low-line-height;
+            letter-spacing: $default-letter-spacing;
             color: #484848;
           }
         }

@@ -23,12 +23,12 @@
       border: $search-input-border;
       border-radius: $search-input-border-radius;
       height: 4.6rem;
-      font-size: $form-font-size;
-      font-family: $form-font-family;
-      font-weight: $form-font-weight;
-      line-height: $form-line-height;
-      letter-spacing: $form-letter-spacing;
-      text-align: $form-text-align;
+      font-size: $secondary-font-size;
+      font-family: $secondary-font;
+      font-weight: $light-font-weight;
+      line-height: $low-line-height;
+      letter-spacing: $default-letter-spacing;
+      text-align: $default-text-align;
     }
 
     &-main-page {
@@ -38,12 +38,12 @@
       border: $search-input-border;
       border-radius: $search-input-border-radius;
       height: 4.6rem;
-      font-size: $form-font-size;
-      font-family: $form-font-family;
-      font-weight: $form-font-weight;
-      line-height: $form-line-height;
-      letter-spacing: $form-letter-spacing;
-      text-align: $form-text-align;
+      font-size: $secondary-font-size;
+      font-family: $secondary-font;
+      font-weight: $light-font-weight;
+      line-height: $low-line-height;
+      letter-spacing: $default-letter-spacing;
+      text-align: $default-text-align;
     }
 
     &-icon {
@@ -80,8 +80,8 @@
     border-radius: 8px;
     position: relative;
     color: #484848;
-    font-family: 'Roboto';
-    font-size: 1.8rem;
+    font-family: $primary-font;
+    font-size: $default-font-size;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -116,7 +116,7 @@
       margin: 2rem 0 0 0;
       width: calc((15.5rem / $min-width) * 100vw);
       height: calc((13.5rem / $min-width) * 100vw);
-      background-color: $custom-selectbox-option-background-color;
+      background-color: $color-white;
       box-shadow: 4px 6px 12px 4px #00000033;
     }
   }
@@ -130,15 +130,15 @@
     cursor: pointer;
     width: calc((13.5rem / $min-width) * 100vw);
     height: calc((2.3rem / $min-width) * 100vw);
-    color: #000;
-    font-family: Roboto;
+    color: $color-black;
+    font-family: $primary-font;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 
     &:hover {
-      color: #FFF;
+      color: $color-white;
       border-radius: 8px;
       background: #B3B3B3;
       border-radius: 8px;
@@ -161,12 +161,12 @@
     animation-duration: .5s;
 
     color: #FF000080 !important;
-    font-family: 'Roboto';
-    font-size: 1.8rem;
-    font-weight: 700;
-    line-height: 2.1rem;
-    letter-spacing: 0em;
-    text-align: left;
+    font-family: $primary-font;
+    font-size: $default-font-size;
+    font-weight: $heavy-font-weight;
+    line-height: $high-line-height;
+    letter-spacing: $default-letter-spacing;
+    text-align: $default-text-align;
   }
 }
 

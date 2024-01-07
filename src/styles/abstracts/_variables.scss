@@ -6,53 +6,33 @@ $min-height: 90rem;
 
 //-Default Fonts:
 $default-font-size: 1.8rem;
-$default-font-weight: 700;
-$default-line-height: 2.1rem;
-$default-font-family: 'Roboto';
+$secondary-font-size: 1.6rem;
+$thirdy-subdetails-font-size: 1.4rem;
+$inherit: inherit;
+
+$high-line-height: 2.1rem;
+$low-line-height: 1.6rem;
+
+$default-letter-spacing: 1.6rem;
+
+$primary-font: 'Roboto';
+$secondary-font: 'Inter';
+
+$heavy-font-weight: 700;
+$light-font-weight: 400;
 
 $heading-primary-font-size: 3.2rem;
-$heading-primary-font-weight: 700;
 $heading-primary-line-height: 3.6rem;
-$heading-primary-font-family: 'Inter';
 
-$branding-label-font-size: 1.4rem;
-
-//--Form Fonts
-$form-font-size: 1.6rem;
-$form-font-family: 'Inter';
-$form-font-weight: 400;
-$form-line-height: 1.6rem;
-$form-letter-spacing: 0em;
-$form-text-align: left;
-
-$select-input-font-family: 'Roboto';
-$custom-selectbox-option-background-color: #FFF;
-$custom-selectbox-option-hover-background-color: #B3B3B3;
-$custom-selectbox-option-hover-text-color: #FFF;
-
-//--Search Details Fonts
-$search-details-font-size: 1.6rem;
-$search-details-font-family: 'Inter';
-$search-details-font-weight: 400;
-$search-details-line-height: 2rem;
-
-$search-subdetails-font-size: 1.4rem;
-$search-subdetails-font-family: inherit;
-$search-subdetails-font-weight: inherit;
-$search-subdetails-line-height: 1.6rem;
-
-$search-show-more-button-font-weight: 700;
-$search-show-more-button-line-height: 2.4rem;
-$search-show-more-button-letter-spacing: 0em;
-$search-show-more-button-hover-color: #4F75C2;
-
+$default-letter-spacing: 0em;
+$default-text-align: left;
 
 //--Font Colors:
-$default-color-text-black: #090A0A;
-$default-color-text-white: #FFFFFF;
+$color-white: #FFF;
+$color-black: #090A0A;
+$color-gray: #72777A;
+$default-letter-spacing: 0em;
 
-$heading-primary-color: #090A0A;
-$search-subdetails-color: #72777A;
 
 //-Button Component:
 $primary-button-height: 4.6rem;
@@ -63,6 +43,7 @@ $primary-button-bg-color: #204080;
 $primary-button-hover-color: #4F75C2;
 
 //-Forms
+$custom-selectbox-option-hover-background-color: #B3B3B3;
 $search-input-border: 2px solid #204080;
 $search-input-border-radius: 8px;
 $select-input-background-color: #F3F2F2;
@@ -72,3 +53,6 @@ $select-input-text-color: #414141;
 $default-grid-gap: 1rem;
 $searching-gap: 2.1rem;
 $grid-margin: 2.1rem;
+
+//Transitions
+$default-transition: all .5s;
