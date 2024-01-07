@@ -24,12 +24,22 @@ export class AddLinkPageComponent {
         public dataService: DataService,
         private fb: FormBuilder) {
         this.addFormGroup = this.fb.group({
-            nameSurname: ['', Validators.required],
-            country: ['', Validators.required],
-            city: ['', Validators.required],
-            email: ['', Validators.required],
-            website: ['', Validators.required],
-        })
+            nameSurname: ['',
+                [Validators.required,
+                Validators.pattern('^[a-zA-Z ]{4,60}$')]],
+            country: ['',
+                [Validators.required,
+                Validators.pattern('^[a-zA-Z ]{2,40}$')]],
+            city: ['',
+                [Validators.required,
+                Validators.pattern('^[a-zA-Z ]{2,40}$')]],
+            email: ['',
+                [Validators.required,
+                Validators.email]],
+            website: ['',
+                [Validators.required,
+                Validators.pattern('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?')]],
+        });
     }
 
     get f() {
