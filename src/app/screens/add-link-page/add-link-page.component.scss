@@ -92,9 +92,13 @@
     }
   }
 
-  &-button-container {
-    display: inline-flex;
-    justify-content: end;
+  &-button {
+    width: calc((13.5rem / $min-width) * 100vw);
+
+    &-container {
+      display: inline-flex;
+      justify-content: end;
+    }
   }
 }
 
